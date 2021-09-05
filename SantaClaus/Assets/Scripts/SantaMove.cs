@@ -5,6 +5,12 @@ using UnityEngine;
 public class SantaMove : MonoBehaviour
 {
     public float speed = 7.0f;
+    public GameObject PresentBox;
+
+    private void Start()
+    {
+
+    }
 
     private void Update()
     {
@@ -23,6 +29,10 @@ public class SantaMove : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position -= transform.right * speed * Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(PresentBox, transform.position, Quaternion.identity);
         }
     }
 }
